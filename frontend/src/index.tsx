@@ -3,19 +3,12 @@ import ReactDOM from "react-dom";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 
-import Recipe from "./components/Recipe";
-
-
-const App = () => (
-	<MuiThemeProvider>
-		<Recipe/>,
-	</MuiThemeProvider>
-);
+import RecipeCard from "./components/RecipeCard";
 
 
 ReactDOM.render(
 		<MuiThemeProvider>
-			<Recipe/>
+			<RecipeCard/>
 		</MuiThemeProvider>,
 		document.getElementById("app")
 );
