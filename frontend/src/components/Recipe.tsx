@@ -3,16 +3,20 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-export class RecipeCard extends React.Component<any, any> {
-		constructor(props: any) {
+export interface RecipeCardProps {
+	name: string;
+	author: string;
+	image: string;
+}
+
+export class RecipeCard extends React.Component<RecipeCardProps, any> {
+		constructor(props: RecipeCardProps) {
 			injectTapEventPlugin();
 
 			super(props);
 		}
 
 		render() {
-			return	<RaisedButton label="Default" />;
+			return	<RaisedButton label="{this.props.name}"/>;
 		}
 }
-
-export default RecipeCard;
