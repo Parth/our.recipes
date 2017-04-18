@@ -1,9 +1,21 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import React from "react";
+import ReactDOM from "react-dom";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import { Hello } from "./components/Hello";
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
+import Recipe from "./components/Recipe";
+
+const App = () => (
+	<MuiThemeProvider>
+		<Recipe/>,
+	</MuiThemeProvider>
+);
 
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("example")
+		<MuiThemeProvider>
+			<Recipe/>
+		</MuiThemeProvider>,
+		document.getElementById("example")
 );

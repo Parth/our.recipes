@@ -13,11 +13,13 @@
     "source-map-loader": "^0.2.1",
     "typescript": "^2.2.2",
     "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "webpack-fix-default-import-plugin": "^1.0.1"
   },
   "dependencies": {
     "@types/react": "^15.0.21",
     "@types/react-dom": "^0.14.23",
+    "material-ui": "^0.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   }
