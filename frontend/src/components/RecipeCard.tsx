@@ -27,7 +27,7 @@ export class RecipeCard extends React.Component<RecipeCardProps, any> {
 					<CardMedia>
 						<img src={this.props.picture}/>
 					</CardMedia>
-					<CardTitle title={this.props.name} subtitle={this.props.preptime} />
+					<CardTitle title={this.props.name} subtitle={this.props.preptime + " Mins of Preptime" } />
 					<CardText>
 						{this.props.description}
 					</CardText>
