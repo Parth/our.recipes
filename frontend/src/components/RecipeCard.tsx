@@ -19,11 +19,14 @@ export class RecipeCard extends React.Component<RecipeCardProps, any> {
 			super(props);
 		}
 
+		style() {
+			return {
+				width: '300px'
+			};
+		}
+
 		render() {
-			return	<Card>
-					<CardHeader
-						title={this.props.author}
-					/>
+			return	<Card style={this.style()}>
 					<CardMedia>
 						<img src={this.props.picture}/>
 					</CardMedia>
