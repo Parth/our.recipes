@@ -2,9 +2,15 @@ package com.recipeshare;
 
 import static spark.Spark.*;
 
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.MongoClient;
+
+
 public class Server {
 	public static void main(String args[]) {
-		Recipe test = new Recipe("Chicken Noodle Soup", 10);
-		get("/", (req, res) -> test.toString());
+		MongoClient mongoClient = new MongoClient("localhost", 8123);
+		MongoDatabase db = mongoClient.getDatabase("recipeshare");
+
+		get("/recipes", (req, res) -> API.getAllRecipes(db) );
 	}
 }

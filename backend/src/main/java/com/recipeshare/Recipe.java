@@ -1,6 +1,6 @@
 package com.recipeshare;
 
-import org.json.JSONObject;
+import com.google.gson.JsonObject;
 
 public class Recipe {
 	private String name;
@@ -27,12 +27,12 @@ public class Recipe {
 		this.prepTime = prepTime;
 	}
 
-	public JSONObject getJSON() {
-		JSONObject json = new JSONObject();
+	public JsonObject getJSON() {
+		JsonObject json = new JsonObject();
 
 		try {
-			json.put("name", name);
-			json.put("prepTime", prepTime);
+			json.addProperty("name", name);
+			json.addProperty("prepTime", prepTime);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
