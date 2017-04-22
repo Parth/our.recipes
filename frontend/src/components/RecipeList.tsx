@@ -21,15 +21,22 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 		this.state = {
 			recipes: []
 		};
+
+		this.handleData = this.handleData.bind(this);
+
+	}
+
+	handleData = (data) => {
+		this.setState({recipes : data});
 	}
 
 	componentDidMount() {
-		fetch('http://localhost:4567/recipes')	
-			.then(function(response) {
-				response.json().then(function(data) {
-					console.log(data);
-				});
-			});
+		fetch("http://localhost:4567/recipes")
+			.then( (response) => {
+				return response.json() })   
+					.then( (json) => {
+						this.setState({recipes: json});
+					});
 	}
 
 	readonly style = {
@@ -46,9 +53,6 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 	}
 
 	render() {
-		return <div></div>
-	}
-	render2() {
 		return (<div style={this.style.root as any}>
 				<GridList
 					cellHeight={180}
