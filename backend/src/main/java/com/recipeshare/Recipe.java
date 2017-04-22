@@ -1,6 +1,8 @@
 package com.recipeshare;
 
 import com.google.gson.JsonObject;
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
 
 public class Recipe {
 	private String name;
@@ -47,22 +49,13 @@ public class Recipe {
 		this.author = author;
 	}
 
-	public JsonObject getJSON() {
-		JsonObject json = new JsonObject();
-
-		try {
-			json.addProperty("name", name);
-			json.addProperty("prepTime", prepTime);
-			json.addProperty("url", url);
-			json.addProperty("author", author);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return json;
+	public String toString() {
+		Gson gson = new Gson();
+		return gson.toJson(this);
 	}
 
-	public String toString() {
-		return this.getJSON().toString();
+	public JsonObject toJSON() {
+		JsonParser parser = new JsonParser();
+		return parser.parse(this.toString()).getAsJsonObject();
 	}
 }
