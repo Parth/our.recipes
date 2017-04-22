@@ -13,30 +13,30 @@ export interface RecipeCardProps {
 }
 
 export class RecipeCard extends React.Component<RecipeCardProps, any> {
-		constructor(props: RecipeCardProps) {
-			injectTapEventPlugin();
+	constructor(props: RecipeCardProps) {
+		injectTapEventPlugin();
 
-			super(props);
-		}
+		super(props);
+	}
 
-		style() {
-			return {
-				width: '300px'
-			};
-		}
+	style() {
+		return {
+			width: '300px'
+		};
+	}
 
-		render() {
-			return	<Card style={this.style()}>
-					<CardMedia>
-						<img src={this.props.picture}/>
-					</CardMedia>
-					<CardTitle title={this.props.name} subtitle={this.props.preptime + " Mins of Preptime" } />
-					<CardText>
-						{this.props.description}
-					</CardText>
-				</Card>
-			;
-		}
+	render() {
+		return	<Card style={this.style()}>
+				<CardMedia>
+					<img src={this.props.picture}/>
+				</CardMedia>
+				<CardTitle title={this.props.name} subtitle={this.props.preptime + " Mins of Preptime" } />
+				<CardText>
+					{this.props.description}
+				</CardText>
+			</Card>
+		;
+	}
 }
 
 export default RecipeCard;
