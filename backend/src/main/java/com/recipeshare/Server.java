@@ -11,6 +11,9 @@ public class Server {
 		MongoClient mongoClient = new MongoClient("localhost", 8123);
 		MongoDatabase db = mongoClient.getDatabase("recipeshare");
 
-		get("/recipes", (req, res) -> API.getAllRecipes(db) );
+		get("/recipes", (req, res) -> {
+			res.header("Access-Control-Allow-Origin", "*");
+			return API.getAllRecipes(db);
+		});
 	}
 }

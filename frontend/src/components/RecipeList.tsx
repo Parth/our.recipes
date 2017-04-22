@@ -7,57 +7,29 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
+
+
 export interface RecipeListProps {
 	url: string;
 }
 
 export class RecipeList extends React.Component<RecipeListProps, any> {
-	readonly tilesData = [
-		{
-			img: 'food.jpg',
-			title: 'Breakfast',
-			author: 'jill111',
-		},
-		{
-			img: 'food.jpg',
-			title: 'Tasty burger',
-			author: 'pashminu',
-		},
-		{
-			img: 'food.jpg',
-			title: 'Camera',
-			author: 'Danson67',
-		},
-		{
-			img: 'food.jpg',
-			title: 'Morning',
-			author: 'fancycrave1',
-		},
-		{
-			img: 'food.jpg',
-			title: 'Hats',
-			author: 'Hans',
-		},
-		{
-			img: 'food.jpg',
-			title: 'Honey',
-			author: 'fancycravel',
-		},
-		{
-			img: 'food.jpg',
-			title: 'Vegetables',
-			author: 'jill111',
-		},
-		{
-			img: 'food.jpg',
-			title: 'Water plant',
-			author: 'BkrmadtyaKarki',
-		},
-	];
-	
 	constructor(props: RecipeListProps) {
 		super(props);
 		injectTapEventPlugin();
+
+		this.state = {
+			recipes: []
+		};
+	}
+
+	componentDidMount() {
+		fetch('http://localhost:4567/recipes')	
+			.then(function(response) {
+				response.json().then(function(data) {
+					console.log(data);
+				});
+			});
 	}
 
 	readonly style = {
@@ -74,20 +46,23 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 	}
 
 	render() {
+		return <div></div>
+	}
+	render2() {
 		return (<div style={this.style.root as any}>
 				<GridList
 					cellHeight={180}
 					style={this.style.gridList as any}
 				>
 					<Subheader>December</Subheader>
-					{this.tilesData.map((tile) => (
+					{this.state.recipes.map((tile) => (
 						<GridTile
-							key={tile.title}
-							title={tile.title}
+							key={tile.name}
+							title={tile.name}
 							subtitle={<span>by <b>{tile.author}</b></span>}
 							actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
 						>
-							<img src={tile.img} />
+							<img src={tile.url} />
 						</GridTile>
 					))}
 				</GridList>

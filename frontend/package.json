@@ -19,6 +19,7 @@
   "dependencies": {
     "@types/react": "^15.0.21",
     "@types/react-dom": "^0.14.23",
+    "fetch": "^1.1.0",
     "material-ui": "^0.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
