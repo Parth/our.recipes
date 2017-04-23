@@ -5,24 +5,24 @@ import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 
 public class Recipe {
-	private String name;
+	private String title;
 	private int prepTime;
 	private String url;
 	private String author;
 
-	public Recipe(String name, int prepTime, String url, String author) {
-		this.name = name;
+	public Recipe(String title, int prepTime, String url, String author) {
+		this.title = title;
 		this.prepTime = prepTime;
 		this.url = url;
 		this.author = author;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitel(String title) {
+		this.title = title;
 	}
 
 	public int getPrepTime() {
