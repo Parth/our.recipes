@@ -10,10 +10,16 @@ import com.mongodb.MongoClient;
 import java.util.Map;
 
 public class Server {
+
+	private static final int SERVER_PORT = 8001;
+	private static final int DATABASE_PORT = 8002;
+
 	public static void main(String args[]) {
-		MongoClient mongoClient = new MongoClient("localhost", 8123);
+		MongoClient mongoClient = new MongoClient("localhost", DATABASE_PORT);
 		MongoDatabase db = mongoClient.getDatabase("recipeshare");
 
+		port(SERVER_PORT);
+		
 		get("/recipes", (req, res) -> {
 			res.header("Access-Control-Allow-Origin", "*");
 			return API.getAllRecipes(db);

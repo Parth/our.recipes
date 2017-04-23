@@ -5,9 +5,7 @@ import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-
+import RecipeCard from "./RecipeCard";
 
 export interface RecipeListProps {
 	url: string;
@@ -16,7 +14,6 @@ export interface RecipeListProps {
 export class RecipeList extends React.Component<RecipeListProps, any> {
 	constructor(props: RecipeListProps) {
 		super(props);
-		injectTapEventPlugin();
 
 		this.state = {
 			recipes: []
@@ -31,7 +28,7 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 	}
 
 	componentDidMount() {
-		fetch("http://localhost:4567/recipes")
+		fetch("http://192.168.1.222:8001/recipes")
 			.then( (response) => {
 				return response.json() })   
 					.then( (json) => {
@@ -41,12 +38,13 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 
 	readonly style = {
 		root: {
+			paddingTop: '10px',
 			display: 'flex',
 			flexWrap: 'wrap',
 			justifyContent: 'space-around',
 		},
 		gridList: {
-			width: 500,
+			width: 600,
 			height: 450,
 			overflowY: 'auto',
 		}
@@ -58,16 +56,16 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 					cellHeight={180}
 					style={this.style.gridList as any}
 				>
-					<Subheader>December</Subheader>
 					{this.state.recipes.map((tile) => (
-						<GridTile
+						<RecipeCard
 							key={tile.name}
-							title={tile.name}
-							subtitle={<span>by <b>{tile.author}</b></span>}
-							actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
-						>
-							<img src={tile.url} />
-						</GridTile>
+							name={tile.name}
+							picture={tile.url}
+							author={tile.author}
+							preptime={tile.prepTime}
+							description={tile.name}
+
+						/>
 					))}
 				</GridList>
 			</div>

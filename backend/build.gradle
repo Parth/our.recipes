@@ -10,7 +10,7 @@ mainClassName = "com.recipeshare.Server"
 
 
 mongo {
-	port 8123
+	port 8002
 	logging 'console'
 }
 

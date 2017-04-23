@@ -2,8 +2,6 @@ import React from "react";
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
 export interface RecipeCardProps {
 	name: string;
 	picture: string;
@@ -14,14 +12,12 @@ export interface RecipeCardProps {
 
 export class RecipeCard extends React.Component<RecipeCardProps, any> {
 	constructor(props: RecipeCardProps) {
-		injectTapEventPlugin();
-
 		super(props);
 	}
 
 	style() {
 		return {
-			width: '300px'
+			width: '250px'
 		};
 	}
 
