@@ -7,6 +7,7 @@ import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 
 import RecipeList from "./components/RecipeList";
+import CreateRecipe from "./components/CreateRecipe";
 
 injectTapEventPlugin();
 ReactDOM.render(
@@ -14,7 +15,7 @@ ReactDOM.render(
 		<div>
 			<AppBar
 				title="Recipe Share"
-				iconElementRight={<FlatButton label="Create" />} />
+				iconElementRight={<CreateRecipe />} />
 			<RecipeList url="hi" />
 		</div>
 	</MuiThemeProvider>,

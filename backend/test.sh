@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -X POST -d '{"title":"chicken","author":"Parth","prepTime":9,"url": "https://www.papaginos.com/assets/images/error-sadPizza.jpg"}' http://localhost:8001/submit
