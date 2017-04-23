@@ -27,12 +27,7 @@ public class Server {
 
 		post("/submit", (req, res) -> {
 			res.header("Access-Control-Allow-Origin", "*");
-			Gson gson = new GsonBuilder().create();
-			System.out.println("Printing body:");
-			String json = req.body();
-			System.out.println(json);
-			StatusCode status = new StatusCode();
-			return API.submitRecipe(db, json, status);
+			return API.submitRecipe(db, req.body(), null);
 		});
 	}
 }

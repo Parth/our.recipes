@@ -14,13 +14,15 @@ import com.mongodb.client.MongoCollection;
 
 public class RecipeService {
 	public static JsonArray getAllRecipes(MongoDatabase database) {
-		Gson gson = new Gson();
 		MongoCollection<Document> collection = database.getCollection("recipes");
+		JsonArray array = new JsonArray();
 
 		collection.find().forEach((Block<Document>) document -> {
-			System.out.println(document);
+			Gson gson = new Gson();
+			Recipe recipe = gson.fromJson(document.toJson(), Recipe.class);
+			array.add(recipe.toJson());
 		});
-		return null;
+		return array;
 	}
 
 	public static JsonObject submitRecipe(Recipe recipe, MongoDatabase database) {
@@ -29,6 +31,6 @@ public class RecipeService {
 
 		String json = gson.toJson(recipe);
 		collection.insertOne(Document.parse(json));
-		return recipe.toJSON();
+		return recipe.toJson();
 	}
 }

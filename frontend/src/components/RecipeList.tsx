@@ -58,8 +58,8 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 				>
 					{this.state.recipes.map((tile) => (
 						<RecipeCard
-							key={tile.name}
-							name={tile.name}
+							key={tile.title}
+							name={tile.title}
 							picture={tile.url}
 							author={tile.author}
 							preptime={tile.prepTime}

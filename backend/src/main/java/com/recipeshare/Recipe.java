@@ -54,7 +54,7 @@ public class Recipe {
 		return gson.toJson(this);
 	}
 
-	public JsonObject toJSON() {
+	public JsonObject toJson() {
 		JsonParser parser = new JsonParser();
 		return parser.parse(this.toString()).getAsJsonObject();
 	}
