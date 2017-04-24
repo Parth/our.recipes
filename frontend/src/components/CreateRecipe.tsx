@@ -16,7 +16,7 @@ export default class CreateRecipe extends React.Component<any, any> {
 	state = {
 		open: false,
 		title: "",
-		preptime: 0,
+		prepTime: 0,
 		author: "",
 		url: "",
 	};
@@ -32,7 +32,7 @@ export default class CreateRecipe extends React.Component<any, any> {
 	handleCreate = () => {
 		var payload = {
 			title: this.state.title,
-			preptime: this.state.preptime,
+			prepTime: this.state.prepTime,
 			author: this.state.author,
 			url: this.state.url,
 		};
@@ -87,8 +87,8 @@ export default class CreateRecipe extends React.Component<any, any> {
 					<TextField
 						hintText="Preptime"
 						floatingLabelText="Preptime"
-						value={this.state.preptime}
-						onChange={(e) => this.setState({preptime: e.target.value}) }
+						value={this.state.prepTime}
+						onChange={(e) => this.setState({prepTime: e.target.value}) }
 						/>
 
 					<TextField
