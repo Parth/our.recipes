@@ -28,7 +28,7 @@ run.doFirst {
 	startMongoDb.execute()
 
 	addShutdownHook {
-		println("Shutting Down MongoDB");
+		println("Shutting Down MongoDB")
 		stopMongoDb.execute()
 	}
 }
