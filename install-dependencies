@@ -1,0 +1,4 @@
+apt-get update
+apt-get install nodejs-legacy npm gradle default-jdk -y
+(cd frontend && npm i)
+(cd backend && gradle assemble)
