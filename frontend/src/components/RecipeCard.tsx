@@ -6,7 +6,7 @@ export interface RecipeCardProps {
 	name: string;
 	picture: string;
 	author: string;
-	preptime: number;
+	prepTime: number;
 	description: string;
 }
 
@@ -26,7 +26,7 @@ export class RecipeCard extends React.Component<RecipeCardProps, any> {
 				<CardMedia>
 					<img src={this.props.picture}/>
 				</CardMedia>
-				<CardTitle title={this.props.name} subtitle={this.props.preptime + " Mins of Preptime" } />
+				<CardTitle title={this.props.name} subtitle={this.props.prepTime + " Mins of Preptime" } />
 				<CardText>
 					{this.props.description}
 				</CardText>
