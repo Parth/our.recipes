@@ -62,7 +62,7 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 							name={tile.title}
 							picture={tile.url}
 							author={tile.author}
-							preptime={tile.prepTime}
+							prepTime={tile.prepTime}
 							description={tile.name}
 
 						/>
