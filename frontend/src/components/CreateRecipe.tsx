@@ -43,7 +43,7 @@ export default class CreateRecipe extends React.Component<any, any> {
 			body: JSON.stringify(payload)
 		})
 		.then(function(res) {return res.json(); })
-		.then(function(data) { console.log(data) });
+		.then(function(data) { console.log(data); window.location.reload()});
 
 	};
 

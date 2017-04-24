@@ -17,7 +17,7 @@ export class RecipeCard extends React.Component<RecipeCardProps, any> {
 
 	style() {
 		return {
-			width: '250px'
+			width: '250px',
 		};
 	}
 
