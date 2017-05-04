@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --port 8000 --hot --host 0.0.0.0",
-    "deploy": "webpack && http-server"
+    "deploy": "webpack && http-server -p 80"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "material-ui": "^0.17.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
     "react-tap-event-plugin": "^2.0.1",
     "webpack": "^2.4.1"
   }

@@ -4,7 +4,9 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import AppBar from 'material-ui/AppBar';
 
+import CreateRecipe from "./CreateRecipe";
 import RecipeCard from "./RecipeCard";
 
 export interface RecipeListProps {
@@ -51,23 +53,29 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 	}
 
 	render() {
-		return (<div style={this.style.root as any}>
-				<GridList
-					cellHeight={180}
-					style={this.style.gridList as any}
-				>
-					{this.state.recipes.map((tile) => (
-						<RecipeCard
-							key={tile.title}
-							name={tile.title}
-							picture={tile.url}
-							author={tile.author}
-							prepTime={tile.prepTime}
-							description={tile.name}
+		return (
+			<div>
+				<AppBar
+					title="Recipe Share"
+					iconElementRight={<CreateRecipe />} />
+				<div style={this.style.root as any}>
+					<GridList
+						cellHeight={180}
+						style={this.style.gridList as any}
+					>
+						{this.state.recipes.map((tile) => (
+							<RecipeCard
+								key={tile.title}
+								name={tile.title}
+								picture={tile.url}
+								author={tile.author}
+								prepTime={tile.prepTime}
+								description={tile.name}
 
-						/>
-					))}
-				</GridList>
+							/>
+						))}
+					</GridList>
+				</div>
 			</div>
 		);
 	}
