@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --port 8000 --hot --host 0.0.0.0",
-    "deploy": "webpack && http-server -p 80"
+    "deploy": "webpack && http-server"
   },
   "author": "",
   "license": "ISC",

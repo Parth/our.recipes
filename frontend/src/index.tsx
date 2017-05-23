@@ -11,13 +11,13 @@ import {
 } from 'react-router-dom'
 
 import RecipeList from "./components/RecipeList";
+import Welcome from "./components/Welcome";
 
 injectTapEventPlugin();
 ReactDOM.render(
 	<MuiThemeProvider>
 		<Router>
 			<Route path="/" component={Welcome} />
-			<Route path="/recipes" component={RecipeList}/>
 		</Router>
 	</MuiThemeProvider>,
 	document.getElementById("app")
