@@ -34,6 +34,7 @@ export class Welcome extends React.Component<any, any> {
 			<div>
 				<AppBar
 					title="Recipe Share" />
+				<p>Test</p>
 			</div>
 		);
 	}

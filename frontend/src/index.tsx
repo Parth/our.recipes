@@ -7,7 +7,8 @@ import FlatButton from 'material-ui/FlatButton';
 import {
 	BrowserRouter as Router,
 	Route,
-	Link
+	Link,
+	Switch
 } from 'react-router-dom'
 
 import RecipeList from "./components/RecipeList";
@@ -17,7 +18,10 @@ injectTapEventPlugin();
 ReactDOM.render(
 	<MuiThemeProvider>
 		<Router>
-			<Route path="/" component={Welcome} />
+			<Switch>
+				<Route path="/recipes" component={RecipeList}/>
+				<Route path="/" component={Welcome} />
+			</Switch>
 		</Router>
 	</MuiThemeProvider>,
 	document.getElementById("app")
