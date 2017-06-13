@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 8000 --hot --host 0.0.0.0",
-    "deploy": "webpack && http-server"
+    "start": "webpack-dev-server --port 8000 --hot --host 0.0.0.0"
   },
   "author": "",
   "license": "ISC",
