@@ -5,9 +5,6 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
-/**
- * A modal dialog can only be closed by selecting one of the actions.
- */
 export default class CreateRecipe extends React.Component<any, any> {
 	constructor(props: any) {
 		super(props);
