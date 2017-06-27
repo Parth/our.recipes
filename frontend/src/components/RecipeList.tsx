@@ -31,11 +31,12 @@ export class RecipeList extends React.Component<RecipeListProps, any> {
 
 	componentDidMount() {
 		fetch("http://192.168.1.222:8001/recipes")
-			.then( (response) => {
-				return response.json() })   
-					.then( (json) => {
-						this.setState({recipes: json});
-					});
+		.then( (response) => {
+			return response.json() 
+		})   
+		.then( (json) => {
+			this.setState({recipes: json});
+		});
 	}
 
 	readonly style = {
